@@ -91,7 +91,8 @@ var app = app || {};
 						<label onDoubleClick={this.handleEdit}>
 							{this.props.todo.title}
 						</label>
-						<button className="destroy" onClick={this.props.onDestroy} />
+						<button className="todo-button edit-button" onClick={this.handleEdit} />
+						<button className="todo-button destroy" onClick={this.props.onDestroy} />
 					</div>
 					<input
 						ref="editField"
