@@ -63,6 +63,10 @@ var app = app || {};
 			this.props.model.toggle(todoToToggle);
 		},
 
+		togglePriority: function (todoToToggle) {
+			this.props.model.togglePriority(todoToToggle);
+		},
+
 		destroy: function (todo) {
 			this.props.model.destroy(todo);
 		},
@@ -106,6 +110,7 @@ var app = app || {};
 						key={todo.id}
 						todo={todo}
 						onToggle={this.toggle.bind(this, todo)}
+						onTogglePriority={this.togglePriority.bind(this, todo)}
 						onDestroy={this.destroy.bind(this, todo)}
 						onEdit={this.edit.bind(this, todo)}
 						editing={this.state.editing === todo.id}

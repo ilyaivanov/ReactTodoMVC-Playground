@@ -32,7 +32,8 @@ var app = app || {};
 		this.todos = this.todos.concat({
 			id: Utils.uuid(),
 			title: title,
-			completed: false
+			completed: false,
+			prioritized: false
 		});
 
 		this.inform();
@@ -55,6 +56,16 @@ var app = app || {};
 			return todo !== todoToToggle ?
 				todo :
 				Utils.extend({}, todo, {completed: !todo.completed});
+		});
+
+		this.inform();
+	};
+
+	app.TodoModel.prototype.togglePriority = function (todoToToggle) {
+		this.todos = this.todos.map(function (todo) {
+			return todo !== todoToToggle ?
+				todo :
+				Utils.extend({}, todo, {prioritized: !todo.prioritized});
 		});
 
 		this.inform();

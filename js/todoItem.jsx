@@ -79,6 +79,7 @@ var app = app || {};
 			return (
 				<li className={classNames({
 					completed: this.props.todo.completed,
+					prioritized: this.props.todo.prioritized,
 					editing: this.props.editing
 				})}>
 					<div className="view">
@@ -91,6 +92,7 @@ var app = app || {};
 						<label onDoubleClick={this.handleEdit}>
 							{this.props.todo.title}
 						</label>
+						<button className="todo-button priority-button" onClick={this.props.onTogglePriority} />
 						<button className="todo-button edit-button" onClick={this.handleEdit} />
 						<button className="todo-button destroy" onClick={this.props.onDestroy} />
 					</div>
